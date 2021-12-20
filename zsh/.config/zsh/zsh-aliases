@@ -1,0 +1,30 @@
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -iv"
+alias ssh="kitty +kitten ssh"
+alias ytmp3="yt-dlp -x --audio-format mp3 -f bestaudio"
+# colors
+alias diff="diff --color=auto"
+alias dir='dir --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep="grep --color=auto"
+alias ls="ls -hN --color=auto --group-directories-first"
+alias qalc="qalc -c"
+alias vdir="vdir --color=auto"
+# useful
+alias edpuzzle="while true; do xdotool key Right; sleep 0.05; done"
+alias jobs="jobs -l"
+alias l="ls -CF"
+alias la="ls -A"
+alias ll="ls -alF"
+alias sshgame="ssh sshtron.zachlatta.com"
+alias v="nvim"
+alias hw="firefox-nightly --new-window "https://fuhsd.schoology.com" &"
+alias weather="curl wttr.in"
+alias histfile="v ~/.local/share/zsh/history"
+alias quiet="sudo cpupower frequency-set -g conservative"
+alias killorphans="pacman  -Qtdq | sudo pacman -Rns -"
+alias noadsspotify="LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify"
+
+alias tmux="tmux -2"
