@@ -31,10 +31,12 @@ source "$ZDOTDIR/zsh-functions"
 source "$ZDOTDIR/zsh-prompt"
 source "$ZDOTDIR/zsh-vim-mode"
 #
-zsh_add_plugin "zdharma/fast-syntax-highlighting"
+#
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+zsh_add_plugin "zdharma-continuum/fast-syntax-highlighting"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 # zsh_add_plugin "marlonrichert/zsh-autocomplete"
-source "$ZDOTDIR/plugins/zsh-you-should-use/you-should-use.plugin.zsh"
+# source "$ZDOTDIR/plugins/zsh-you-should-use/you-should-use.plugin.zsh"
 . /usr/share/LS_COLORS/dircolors.sh
 #
 [ -f $ZDOTDIR/completion/_git ] && fpath+="$ZDOTDIR/completion/"

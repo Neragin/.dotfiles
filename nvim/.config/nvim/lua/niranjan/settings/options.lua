@@ -41,3 +41,4 @@ vim.o.wildmode           = "longest,full"                -- Display autocomplete
 -- Disable default plugins
 -- vim.g.loaded_netrwPlugin = false
 
+
