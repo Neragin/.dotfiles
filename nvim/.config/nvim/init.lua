@@ -1,7 +1,8 @@
-require "niranjan.settings.options"
-require "niranjan.plugins.plugins"
 require "niranjan.plugins.cmp"
-require("niranjan.settings.maps")
+require "niranjan.plugins.plugins"
+require "niranjan.settings.maps"
+require "niranjan.settings.options"
+require "niranjan.lsp"
 require('Comment').setup()
 require("bufferline").setup{}
 require'lualine'.setup()

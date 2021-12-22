@@ -31,7 +31,6 @@ vim.o.splitright         = true
 vim.o.tabstop            = 2
 
 -- Vim specific
-vim.g.mapleader = " "
 vim.o.completeopt        = "menuone,noinsert,noselect"
 vim.o.fileencoding       = "utf-8"
 vim.o.hidden             = true                          -- Do not save when switching buffers

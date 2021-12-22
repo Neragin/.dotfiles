@@ -2,7 +2,7 @@ local utils = require "niranjan.settings.utils"
 local map = utils.map
 
 
-
+vim.g.mapleader = " "
 map("n", "<leader>e", ":NvimTreeToggle <CR>")
 map("n", "<leader>r", ":NvimTreeFocus <CR> ")
 
