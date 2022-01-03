@@ -39,6 +39,6 @@ vim.o.updatetime         = 300                           -- Delay until write to
 vim.o.wildmode           = "longest,full"                -- Display autocomplete in Command Mode
 
 -- Disable default plugins
--- vim.g.loaded_netrwPlugin = false
+vim.g.loaded_netrwPlugin = false
 
 

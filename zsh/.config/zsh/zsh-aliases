@@ -26,5 +26,6 @@ alias histfile="v ~/.local/share/zsh/history"
 alias quiet="sudo cpupower frequency-set -g conservative"
 alias killorphans="pacman  -Qtdq | sudo pacman -Rns -"
 alias noadsspotify="LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify"
+alias vv="sudo -e"
 
 alias tmux="tmux -2"

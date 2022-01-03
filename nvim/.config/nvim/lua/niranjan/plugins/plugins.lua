@@ -40,32 +40,28 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
+-- deps
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
+  use {"moll/vim-bbye", event="BufRead"}
 use {
     'goolord/alpha-nvim',
     config = function ()
         require'alpha'.setup(require'alpha.themes.dashboard'.opts)
     end
-}  use "nvim-lualine/lualine.nvim"
-  use "akinsho/toggleterm.nvim"
-  use "ahmedkhalf/project.nvim"
+}
+-- GUI
+  use "nvim-lualine/lualine.nvim"
   use "lewis6991/impatient.nvim"
   use 'norcalli/nvim-base16.lua'
   use {"norcalli/nvim-colorizer.lua", event = "BufRead"}
   use "lukas-reineke/indent-blankline.nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-
-  -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
+  use "kyazdani42/nvim-tree.lua"
+  use "akinsho/bufferline.nvim"
+  use "rebelot/kanagawa.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -84,9 +80,14 @@ use {
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use {
+    "folke/trouble.nvim",
+    cmd = {"Trouble", "TroubleToggle"}
+  }
 
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
+  use {"nvim-telescope/telescope.nvim", cmd = "Telescope"}
+  use "ahmedkhalf/project.nvim"
 
   -- Treesitter
   use {
@@ -98,14 +99,18 @@ use {
     config = function()
         require('Comment').setup()
     end
-}
+
+  }
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+
+
+-- misc
   use 'ActivityWatch/aw-watcher-vim'
   use 'andweeb/presence.nvim'
   use 'ThePrimeagen/vim-be-good'
-  use 'tpope/vim-fugitive'
-  use "rebelot/kanagawa.nvim"
 
   -- Git
+  use 'tpope/vim-fugitive'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
