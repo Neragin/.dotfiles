@@ -1,3 +1,6 @@
 [submodule "zsh/.config/zsh/plugins/fast-syntax-highlighting"]
 	path = zsh/.config/zsh/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
+[submodule "spicetify/.config/spicetify/Themes/SpotifyNoPremium"]
+	path = spicetify/.config/spicetify/Themes/SpotifyNoPremium
+	url = https://github.com/Daksh777/SpotifyNoPremium
