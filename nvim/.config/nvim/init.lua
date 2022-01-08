@@ -17,3 +17,4 @@ require'lualine'.setup()
 -- local base16 = require 'base16'
 -- base16(base16.themes["material-palenight"], true)
 vim.cmd("colorscheme kanagawa")
+vim.cmd("set guicursor+=i:blinkwait0")

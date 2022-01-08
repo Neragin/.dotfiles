@@ -96,6 +96,11 @@ _G.packer_plugins = {
     path = "/home/niranjan/.local/share/nvim/site/pack/packer/start/aw-watcher-vim",
     url = "https://github.com/ActivityWatch/aw-watcher-vim"
   },
+  ["bufdelete.nvim"] = {
+    loaded = true,
+    path = "/home/niranjan/.local/share/nvim/site/pack/packer/start/bufdelete.nvim",
+    url = "https://github.com/famiu/bufdelete.nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/niranjan/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -203,6 +208,11 @@ _G.packer_plugins = {
     path = "/home/niranjan/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/home/niranjan/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
+    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/niranjan/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -249,13 +259,6 @@ _G.packer_plugins = {
     path = "/home/niranjan/.local/share/nvim/site/pack/packer/opt/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
-  ["vim-bbye"] = {
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/niranjan/.local/share/nvim/site/pack/packer/opt/vim-bbye",
-    url = "https://github.com/moll/vim-bbye"
-  },
   ["vim-be-good"] = {
     loaded = true,
     path = "/home/niranjan/.local/share/nvim/site/pack/packer/start/vim-be-good",
@@ -289,7 +292,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-colorizer.lua', 'vim-bbye'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-colorizer.lua'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

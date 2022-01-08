@@ -19,6 +19,8 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
+keymap("n", "<Esc>", ":noh <CR>", opts)
+keymap("n", "<leader>x", ":Bdelete <CR>", opts)
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -60,7 +62,13 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "<leader>ff", ":Telescope find_files <CR>", opts)
 keymap("n", "<leader>fw", ":Telescope live_grep <CR>", opts)
 
-
+-- Git
+keymap("n", "<leader>gl", ":Telescope git_commits <CR>", opts)
+keymap("n", "<leader>gl", ":Telescope git_commits <CR>", opts)
+keymap("n", "<leader>gu", ":Telescope git_files <CR>", opts)
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle <CR>", opts)
 keymap("n", "<leader>r", ":NvimTreeFocus <CR> ", opts)
+
+-- formatting
+keymap("n", "<leader>fn", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)

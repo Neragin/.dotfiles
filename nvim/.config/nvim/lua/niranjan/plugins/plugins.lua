@@ -45,13 +45,13 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "kyazdani42/nvim-web-devicons"
-  use {"moll/vim-bbye", event="BufRead"}
-use {
-    'goolord/alpha-nvim',
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.dashboard'.opts)
-    end
-}
+  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
+  use {
+      'goolord/alpha-nvim',
+      config = function ()
+          require'alpha'.setup(require'alpha.themes.dashboard'.opts)
+      end
+  }
 -- GUI
   use "nvim-lualine/lualine.nvim"
   use "lewis6991/impatient.nvim"
@@ -101,6 +101,7 @@ use {
     end
 
   }
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
 
@@ -108,6 +109,7 @@ use {
   use 'ActivityWatch/aw-watcher-vim'
   use 'andweeb/presence.nvim'
   use 'ThePrimeagen/vim-be-good'
+  use 'famiu/bufdelete.nvim'
 
   -- Git
   use 'tpope/vim-fugitive'
