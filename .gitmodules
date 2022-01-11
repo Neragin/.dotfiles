@@ -4,3 +4,6 @@
 [submodule "spicetify/.config/spicetify/Themes/SpotifyNoPremium"]
 	path = spicetify/.config/spicetify/Themes/SpotifyNoPremium
 	url = https://github.com/Daksh777/SpotifyNoPremium
+[submodule "spicetify/.config/spicetify/CustomApps/spicetify-marketplace"]
+	path = spicetify/.config/spicetify/CustomApps/spicetify-marketplace
+	url = https://github.com/CharlieS1103/spicetify-marketplace
