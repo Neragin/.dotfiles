@@ -33,3 +33,5 @@ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export ZSHZ_CASE=smart
 export BROWSER=firefox-developer-edition
 export JAVA_HOME="/usr/lib/jvm/java-15-openjdk"
+
+export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc", export PSQL_HISTORY="$XDG_STATE_HOME/psql_history", export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass", export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
