@@ -26,10 +26,12 @@ alias hw="firefox-nightly --new-window "https://fuhsd.schoology.com" &"
 alias weather="curl wttr.in"
 alias histfile="v ~/.local/share/zsh/history"
 alias quiet="sudo cpupower frequency-set -g conservative"
-alias killorphans="pacman  -Qtdq | sudo pacman -Rns -"
+alias killorphans="sudo pacman  -Qtdq | sudo pacman -Rns -"
 alias noadsspotify="LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify"
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias vv="sudo -e"
 
 alias tmux="tmux -2"
 alias t="tmux-sessionizer"
+
+alias installed="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
