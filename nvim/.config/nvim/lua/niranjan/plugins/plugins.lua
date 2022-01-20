@@ -51,6 +51,7 @@ return packer.startup(function(use)
           require'alpha'.setup(require'alpha.themes.dashboard'.opts)
       end
   }
+
 -- GUI
   use "nvim-lualine/lualine.nvim"
   use "lewis6991/impatient.nvim"
@@ -60,7 +61,7 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
-  use "rebelot/kanagawa.nvim"
+  use 'folke/tokyonight.nvim'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -112,6 +113,7 @@ return packer.startup(function(use)
 
   -- Git
   use 'tpope/vim-fugitive'
+  use "TimUntersberger/neogit" -- maybe switch?
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
