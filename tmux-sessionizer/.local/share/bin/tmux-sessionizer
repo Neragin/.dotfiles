@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+projects=`echo "cxbot meliorobot meliorodashboard dotfiles" | tr ' ' '\n'`
+
+selected=`printf "$projects" | fzf`
+
+tmux had-session -t $selected 2>/dev/null
+case $selected in 
+  cxbot)
+    tmux new -s cxbot -n nvim -d -c "/home/niranjan/Documents/src/cx-bot-rewrite"
+    tmux new-window -t cxbot -n "runner" -d -c "/home/niranjan/Documents/src/cx-bot-rewrite"
+    tmux new-window -t cxbot -n "scratch" -d -c "/home/niranjan/Documents/src/cx-bot-rewrite" ;;
+  meliorobot)
+    tmux new-session -s meliorobot -n nvim -d -c "/home/niranjan/Documents/melioro/bot/"
+    tmux new-window -t meliorobot -n "runner" -d -c "/home/niranjan/Documents/melioro/bot/"
+    tmux new-window -t meliorobot -n "scratch" -d -c "/home/niranjan/Documents/melioro/bot/";;
+  meliorodashboard)
+    tmux new -s cxbot -n dashboard -d -c "/home/niranjan/Documents/melioro/dashboard/"
+    tmux new-window -t dashboard -n "runner" -d -c "/home/niranjan/Documents/melioro/dashboard/"
+    tmux new-window -t dashboard -n "scratch" -d -c "/home/niranjan/Documents/melioro/dashboard/";;
+  dotfiles)
+    tmux new -s cxbot -n nvim -d -c "/home/niranjan/Documents/melioro/dashboard/"
+    tmux new-window -t cxbot -n "runner" -d -c "/home/niranjan/Documents/melioro/dashboard/"
+    tmux new-window -t cxbot -n "scratch" -d -c "/home/niranjan/Documents/melioro/dashboard/";;
+esac
+echo "created session $selected"
+tmux a -t $selected
