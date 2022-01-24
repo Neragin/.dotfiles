@@ -13,11 +13,11 @@ require "niranjan.plugins.conf.project"
 require "niranjan.plugins.conf.impatient"
 require "niranjan.plugins.conf.indentline"
 
-require'lualine'.setup()
--- local base16 = require 'base16'
--- base16(base16.themes["material-palenight"], true)
--- Lua
-vim.cmd[[colorscheme tokyonight]]
+require'lualine'.setup {
+  options = {
+    theme = "tokyonight"
+  }
+}
 vim.cmd("set guicursor+=i:blinkwait0")
 
 
@@ -25,3 +25,5 @@ vim.cmd("set guicursor+=i:blinkwait0")
 local neogit = require('neogit')
 
 neogit.setup {}
+
+vim.cmd[[colorscheme tokyonight]]
