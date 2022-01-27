@@ -13,11 +13,6 @@ require "niranjan.plugins.conf.project"
 require "niranjan.plugins.conf.impatient"
 require "niranjan.plugins.conf.indentline"
 
-require'lualine'.setup {
-  options = {
-    theme = "tokyonight"
-  }
-}
 vim.cmd("set guicursor+=i:blinkwait0")
 
 
@@ -25,5 +20,16 @@ vim.cmd("set guicursor+=i:blinkwait0")
 local neogit = require('neogit')
 
 neogit.setup {}
-
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_italic_comments = true;
+vim.g.tokyonight_dark_sidebar = true;
+vim.g.tokyonight_dark_float = true;
+vim.g.tokyonight_lualine_bold = true;
 vim.cmd[[colorscheme tokyonight]]
+
+
+require'lualine'.setup {
+  options = {
+    theme = "tokyonight"
+  }
+}
