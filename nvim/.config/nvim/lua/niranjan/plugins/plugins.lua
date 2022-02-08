@@ -14,7 +14,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   print "Installing packer close and reopen Neovim..."
   vim.cmd [[packadd packer.nvim]]
 end
-
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd [[
   augroup packer_user_config
@@ -28,6 +27,7 @@ local status_ok, packer = pcall(require, "packer")
 if not status_ok then
   return
 end
+
 
 -- Have packer use a popup window
 packer.init {
@@ -102,11 +102,11 @@ return packer.startup(function(use)
 
   }
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use "windwp/nvim-ts-autotag"
+  use "p00f/nvim-ts-rainbow"
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-
-
 -- misc
-  use 'ActivityWatch/aw-watcher-vim'
+  -- use 'ActivityWatch/aw-watcher-vim'
   use 'andweeb/presence.nvim'
   use 'ThePrimeagen/vim-be-good'
   use 'famiu/bufdelete.nvim'
