@@ -30,6 +30,9 @@ vim.cmd[[colorscheme tokyonight]]
 
 require'lualine'.setup {
   options = {
-    theme = "tokyonight"
+    theme = "catpuccin"
   }
 }
+
+-- Lua
+vim.cmd[[colorscheme catppuccin]]

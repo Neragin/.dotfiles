@@ -14,7 +14,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 	print("Installing packer close and reopen Neovim...")
 	vim.cmd([[packadd packer.nvim]])
 end
-
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd([[
   augroup packer_user_config
@@ -104,18 +103,29 @@ return packer.startup(function(use)
 			require("Comment").setup()
 		end,
 	})
-	use("JoosepAlviste/nvim-ts-context-commentstring")
-	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
-
-	-- misc
-	use("ActivityWatch/aw-watcher-vim")
-	use("andweeb/presence.nvim")
-	use("ThePrimeagen/vim-be-good")
-	use("famiu/bufdelete.nvim")
 
 	-- Git
-	use("tpope/vim-fugitive")
+	-- misc
+	use("ActivityWatch/aw-watcher-vim")
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use("ThePrimeagen/vim-be-good")
 	use("TimUntersberger/neogit") -- maybe switch?
+	use("andweeb/presence.nvim")
+	use("famiu/bufdelete.nvim")
+	use("tpope/vim-fugitive")
+	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
+	-- Git
+	-- use 'ActivityWatch/aw-watcher-vim'
+	use("TimUntersberger/neogit") -- maybe switch?
+	use("p00f/nvim-ts-rainbow")
+	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
+	use("windwp/nvim-ts-autotag")
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use("ThePrimeagen/vim-be-good")
+	use("andweeb/presence.nvim")
+	use("famiu/bufdelete.nvim")
+	use("tpope/vim-fugitive")
+	-- misc
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
