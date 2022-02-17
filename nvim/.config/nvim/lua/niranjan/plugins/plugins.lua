@@ -104,27 +104,19 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- Git
 	-- misc
-	use("ActivityWatch/aw-watcher-vim")
-	use("JoosepAlviste/nvim-ts-context-commentstring")
-	use("ThePrimeagen/vim-be-good")
-	use("TimUntersberger/neogit") -- maybe switch?
-	use("andweeb/presence.nvim")
-	use("famiu/bufdelete.nvim")
-	use("tpope/vim-fugitive")
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	-- Git
 	-- use 'ActivityWatch/aw-watcher-vim'
 	use("TimUntersberger/neogit") -- maybe switch?
 	use("p00f/nvim-ts-rainbow")
-	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("windwp/nvim-ts-autotag")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("ThePrimeagen/vim-be-good")
 	use("andweeb/presence.nvim")
 	use("famiu/bufdelete.nvim")
 	use("tpope/vim-fugitive")
+	use("sindrets/diffview.nvim")
 	-- misc
 
 	-- Automatically set up your configuration after cloning packer.nvim
