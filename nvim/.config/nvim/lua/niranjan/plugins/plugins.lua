@@ -117,9 +117,7 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- Git
 	-- misc
-	use("ActivityWatch/aw-watcher-vim")
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	-- Git
 	-- use 'ActivityWatch/aw-watcher-vim'
@@ -137,6 +135,7 @@ return packer.startup(function(use)
 			require("kitty-runner").setup()
 		end,
 	})
+	use("sindrets/diffview.nvim")
 	-- misc
 
 	-- Automatically set up your configuration after cloning packer.nvim
