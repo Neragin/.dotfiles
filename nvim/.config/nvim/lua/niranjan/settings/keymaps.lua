@@ -67,7 +67,7 @@ keymap("n", "<leader>gl", ":Telescope git_commits <CR>", opts)
 keymap("n", "<leader>gl", ":Telescope git_commits <CR>", opts)
 keymap("n", "<leader>gu", ":Telescope git_files <CR>", opts)
 -- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle <CR>", opts)
+keymap("n", "<leader>e", ":NeoTreeFocusToggle <CR>", opts)
 keymap("n", "<leader>r", ":NvimTreeFocus <CR> ", opts)
 
 -- formatting

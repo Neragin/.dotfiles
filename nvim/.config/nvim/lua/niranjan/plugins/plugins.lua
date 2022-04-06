@@ -58,14 +58,27 @@ return packer.startup(function(use)
 	use({ "norcalli/nvim-colorizer.lua", event = "BufRead" })
 	use("lukas-reineke/indent-blankline.nvim")
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
-	use("kyazdani42/nvim-tree.lua")
+	use({
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v2.x",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		},
+	})
 	use("akinsho/bufferline.nvim")
 	use("folke/tokyonight.nvim")
 	use({
 		"catppuccin/nvim",
 		as = "catppuccin",
 	})
-
+  use({
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").register_lsp_virtual_lines()
+    end,
+  })
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
@@ -107,24 +120,23 @@ return packer.startup(function(use)
 	-- Git
 	-- misc
 	use("ActivityWatch/aw-watcher-vim")
-	use("JoosepAlviste/nvim-ts-context-commentstring")
-	use("ThePrimeagen/vim-be-good")
-	use("TimUntersberger/neogit") -- maybe switch?
-	use("andweeb/presence.nvim")
-	use("famiu/bufdelete.nvim")
-	use("tpope/vim-fugitive")
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	-- Git
 	-- use 'ActivityWatch/aw-watcher-vim'
 	use("TimUntersberger/neogit") -- maybe switch?
 	use("p00f/nvim-ts-rainbow")
-	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("windwp/nvim-ts-autotag")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("ThePrimeagen/vim-be-good")
 	use("andweeb/presence.nvim")
 	use("famiu/bufdelete.nvim")
 	use("tpope/vim-fugitive")
+	use({
+		"jghauser/kitty-runner.nvim",
+		config = function()
+			require("kitty-runner").setup()
+		end,
+	})
 	-- misc
 
 	-- Automatically set up your configuration after cloning packer.nvim

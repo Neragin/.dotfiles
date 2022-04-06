@@ -35,3 +35,4 @@ export BROWSER=firefox-developer-edition
 export JAVA_HOME="/usr/lib/jvm/java-15-openjdk"
 
 export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc", export PSQL_HISTORY="$XDG_STATE_HOME/psql_history", export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass", export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
+export FZF_DEFAULT_OPTS='--color=bg+:#302D41,bg:#1E1E2E,spinner:#F8BD96,hl:#F28FAD --color=fg:#D9E0EE,header:#F28FAD,info:#DDB6F2,pointer:#F8BD96 --color=marker:#F8BD96,fg+:#F2CDCD,prompt:#DDB6F2,hl+:#F28FAD'
