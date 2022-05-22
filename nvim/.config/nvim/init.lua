@@ -16,21 +16,16 @@ require("niranjan.plugins.conf.neogit")
 
 vim.cmd("set guicursor+=i:blinkwait0")
 
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_italic_comments = true
-vim.g.tokyonight_dark_sidebar = true
-vim.g.tokyonight_dark_float = true
-vim.g.tokyonight_lualine_bold = true
 vim.cmd([[colorscheme tokyonight]])
 
 require("lualine").setup({
 	options = {
-		theme = "catppuccin",
+		theme = "tokyonight",
+    options = {globalstatus = true}
 	},
 })
 
 -- Lua
-vim.cmd[[colorscheme catppuccin]]
 vim.diagnostic.config({
-  virtual_text = false,
+  virtual_text = true,
 })

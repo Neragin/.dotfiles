@@ -69,16 +69,6 @@ return packer.startup(function(use)
 	})
 	use("akinsho/bufferline.nvim")
 	use("folke/tokyonight.nvim")
-	use({
-		"catppuccin/nvim",
-		as = "catppuccin",
-	})
-  use({
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    config = function()
-      require("lsp_lines").register_lsp_virtual_lines()
-    end,
-  })
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
@@ -86,6 +76,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-cmdline") -- cmdline completions
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
+  use({"petertriho/cmp-git", requires = "nvim-lua/plenary.nvim"})
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
@@ -110,21 +101,21 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
-	use({
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
-	})
+	 use({
+		 "numToStr/Comment.nvim",
+		 config = function()
+			 require("Comment").setup()
+		 end,
+	 })
 
 	-- misc
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	-- Git
 	-- use 'ActivityWatch/aw-watcher-vim'
 	use("TimUntersberger/neogit") -- maybe switch?
-	use("p00f/nvim-ts-rainbow")
-	use("windwp/nvim-ts-autotag")
-	use("JoosepAlviste/nvim-ts-context-commentstring")
+  use("p00f/nvim-ts-rainbow")
+  use("windwp/nvim-ts-autotag")
+  use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("ThePrimeagen/vim-be-good")
 	use("andweeb/presence.nvim")
 	use("famiu/bufdelete.nvim")
