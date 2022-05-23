@@ -16,16 +16,23 @@ require("niranjan.plugins.conf.neogit")
 
 vim.cmd("set guicursor+=i:blinkwait0")
 
-vim.cmd([[colorscheme tokyonight]])
 
 require("lualine").setup({
 	options = {
-		theme = "tokyonight",
+		theme = "kanagawa",
     options = {globalstatus = true}
 	},
 })
 
--- Lua
-vim.diagnostic.config({
-  virtual_text = true,
+vim.opt.laststatus = 3
+vim.opt.fillchars:append({
+    horiz = '━',
+    horizup = '┻',
+    horizdown = '┳',
+    vert = '┃',
+    vertleft = '┨',
+    vertright = '┣',
+    verthoriz = '╋',
 })
+require'kanagawa'.setup({ globalStatus = true })
+vim.cmd("colorscheme kanagawa")

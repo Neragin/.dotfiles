@@ -53,6 +53,7 @@ return packer.startup(function(use)
 
 	-- GUI
 	use("nvim-lualine/lualine.nvim")
+use 'Mofiqul/dracula.nvim'
 	use("lewis6991/impatient.nvim")
 	use("norcalli/nvim-base16.lua")
 	use({ "norcalli/nvim-colorizer.lua", event = "BufRead" })
@@ -68,7 +69,7 @@ return packer.startup(function(use)
 		},
 	})
 	use("akinsho/bufferline.nvim")
-	use("folke/tokyonight.nvim")
+use "rebelot/kanagawa.nvim"
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
