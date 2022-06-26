@@ -39,6 +39,7 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
+  --
 	-- deps
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
@@ -53,23 +54,23 @@ return packer.startup(function(use)
 
 	-- GUI
 	use("nvim-lualine/lualine.nvim")
-use 'Mofiqul/dracula.nvim'
+	use({
+		"catppuccin/nvim",
+		as = "catppuccin",
+	})
 	use("lewis6991/impatient.nvim")
-	use("norcalli/nvim-base16.lua")
 	use({ "norcalli/nvim-colorizer.lua", event = "BufRead" })
 	use("lukas-reineke/indent-blankline.nvim")
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
-	use({
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v2.x",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-		},
-	})
 	use("akinsho/bufferline.nvim")
-use "rebelot/kanagawa.nvim"
+	use({
+		"kyazdani42/nvim-tree.lua",
+		requires = {
+			"kyazdani42/nvim-web-devicons", -- optional, for file icons
+		},
+		tag = "nightly", -- optional, updated every week. (see issue #1193)
+	})
+	--
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
@@ -77,7 +78,7 @@ use "rebelot/kanagawa.nvim"
 	use("hrsh7th/cmp-cmdline") -- cmdline completions
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
-  use({"petertriho/cmp-git", requires = "nvim-lua/plenary.nvim"})
+	use({ "petertriho/cmp-git", requires = "nvim-lua/plenary.nvim" })
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
@@ -102,21 +103,19 @@ use "rebelot/kanagawa.nvim"
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
-	 use({
-		 "numToStr/Comment.nvim",
-		 config = function()
-			 require("Comment").setup()
-		 end,
-	 })
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
+	use("p00f/nvim-ts-rainbow")
+	use("windwp/nvim-ts-autotag")
+	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- misc
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	-- Git
-	-- use 'ActivityWatch/aw-watcher-vim'
-	use("TimUntersberger/neogit") -- maybe switch?
-  use("p00f/nvim-ts-rainbow")
-  use("windwp/nvim-ts-autotag")
-  use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("ThePrimeagen/vim-be-good")
 	use("andweeb/presence.nvim")
 	use("famiu/bufdelete.nvim")
