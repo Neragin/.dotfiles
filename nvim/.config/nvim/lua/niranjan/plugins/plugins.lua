@@ -119,7 +119,15 @@ return packer.startup(function(use)
 	use("ThePrimeagen/vim-be-good")
 	use("andweeb/presence.nvim")
 	use("famiu/bufdelete.nvim")
-	use("tpope/vim-fugitive")
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+        {"nvim-lua/plenary.nvim"},
+        {"nvim-treesitter/nvim-treesitter"}
+    }
+  }
 	use({
 		"jghauser/kitty-runner.nvim",
 		config = function()

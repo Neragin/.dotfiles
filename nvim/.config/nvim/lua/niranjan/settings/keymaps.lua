@@ -1,14 +1,12 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
+local keymap = vim.keymap.set
 
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 -- Modes
 --   normal_mode = "n",
@@ -61,14 +59,19 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files <CR>", opts)
 keymap("n", "<leader>fw", ":Telescope live_grep <CR>", opts)
+keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gl", ":Telescope git_commits <CR>", opts)
-keymap("n", "<leader>gl", ":Telescope git_commits <CR>", opts)
 keymap("n", "<leader>gu", ":Telescope git_files <CR>", opts)
+keymap("n", "<leader>gg", ":Neogit <CR>", opts)
 -- NvimTree
-keymap("n", "<leader>e", ":NvimTreeOpen <CR>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle <CR>", opts)
 keymap("n", "<leader>r", ":NvimTreeFocus <CR> ", opts)
 
 -- formatting
 keymap("n", "<leader>fn", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+
+
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
