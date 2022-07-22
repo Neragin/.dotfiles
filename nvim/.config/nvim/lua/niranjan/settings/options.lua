@@ -34,7 +34,7 @@ vim.o.completeopt = "menuone,noinsert,noselect"
 vim.o.fileencoding = "utf-8"
 vim.o.hidden = true -- Do not save when switching buffers
 vim.o.spelllang = "en_US"
-vim.o.updatetime = 300 -- Delay until write to Swap and HoldCommand event
+vim.o.updatetime = 100 -- Delay until write to Swap and HoldCommand event
 vim.o.wildmode = "longest,full" -- Display autocomplete in Command Mode
 
 -- Disable default plugins
